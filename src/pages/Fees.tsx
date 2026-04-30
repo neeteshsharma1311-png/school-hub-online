@@ -133,13 +133,40 @@ const FeeTable = ({ block, index }: { block: FeeBlock; index: number }) => (
 
 const Fees = () => (
   <>
-    <PageHeader eyebrow="Academic Year" title="Fee Structure" subtitle="Transparent fee details for all classes." />
+    <PageHeader
+      eyebrow="Academic Year 2026-27"
+      title="Fee Structure"
+      subtitle="Transparent fee details for all classes — from Play Group to Class 10."
+    />
+    <section className="container pb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="rounded-2xl bg-hero p-5 md:p-6 text-primary-foreground shadow-glow flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left"
+      >
+        <div>
+          <div className="text-xs uppercase tracking-widest opacity-90">Limited Seats</div>
+          <div className="font-serif text-xl md:text-2xl font-bold">🎓 Admissions Open for Session 2026-27</div>
+        </div>
+        <span className="rounded-full bg-background/95 text-primary px-5 py-2 text-sm font-bold shadow-soft">
+          Apply Today
+        </span>
+      </motion.div>
+    </section>
     <section className="container pb-20">
       <div className="grid gap-6 lg:grid-cols-2">
         {blocks.map((b, i) => (
           <FeeTable key={b.title} block={b} index={i} />
         ))}
       </div>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-8 text-center text-sm text-muted-foreground"
+      >
+        For any clarification regarding fees, please contact the school office.
+      </motion.p>
     </section>
   </>
 );
