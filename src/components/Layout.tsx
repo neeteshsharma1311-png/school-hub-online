@@ -2,7 +2,7 @@ import { NavLink, Outlet, Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, GraduationCap, Facebook } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeProvider";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,9 +14,17 @@ const nav = [
 
 const Layout = () => {
   const [open, setOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 });
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      {/* scroll progress */}
+      <motion.div
+        style={{ scaleX: progress }}
+        className="fixed top-0 left-0 right-0 z-50 h-[3px] origin-left bg-hero shadow-glow"
+      />
+
       {/* decorative blobs */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="blob h-96 w-96 -left-20 -top-20" style={{ background: "hsl(var(--primary) / 0.4)" }} />
@@ -24,7 +32,7 @@ const Layout = () => {
         <div className="blob h-80 w-80 left-1/3 bottom-0" style={{ background: "hsl(var(--primary-glow) / 0.35)", animationDelay: "-12s" }} />
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-border/50 bg-background/70 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-border/40 glass">
         <div className="container flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2.5 group">
             <div className="grid h-10 w-10 place-items-center rounded-xl bg-hero text-primary-foreground shadow-soft transition-transform group-hover:scale-105">
