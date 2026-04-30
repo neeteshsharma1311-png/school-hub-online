@@ -70,11 +70,11 @@ const Home = () => {
               child to dream big and achieve more.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link to="/fees" className="group inline-flex items-center gap-2 rounded-full bg-hero px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-105">
+              <Link to="/fees" className="sheen group inline-flex items-center gap-2 rounded-full bg-hero animate-gradient px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.04]">
                 View Fee Structure
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-secondary">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border glass px-6 py-3 text-sm font-semibold transition-all hover:scale-[1.04] hover:text-primary">
                 Contact Us
               </Link>
             </div>
@@ -160,9 +160,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="group rounded-2xl border border-border bg-card-soft p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-glow"
+              transition={{ delay: i * 0.05, duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+              className="group relative rounded-2xl border border-border glass p-5 hover-lift overflow-hidden"
             >
+              <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-hero text-primary-foreground shadow-soft transition-transform group-hover:rotate-6">
                 <f.icon className="h-5 w-5" />
               </div>
@@ -186,10 +187,11 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="rounded-2xl border border-border bg-card p-6 shadow-soft transition-transform hover:-translate-y-1"
+              transition={{ delay: i * 0.06, duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+              className="group relative rounded-2xl border border-border glass p-6 hover-lift overflow-hidden"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-hero text-primary-foreground shadow-soft">
+              <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-hero opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30" />
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-hero text-primary-foreground shadow-soft transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-110">
                 <f.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-4 font-serif text-xl font-bold">{f.title}</h3>
@@ -264,7 +266,7 @@ const Home = () => {
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-background text-primary px-7 py-3 text-sm font-bold shadow-soft transition-transform hover:scale-105"
+            className="sheen mt-6 inline-flex items-center gap-2 rounded-full bg-background text-primary px-7 py-3 text-sm font-bold shadow-soft transition-transform hover:scale-[1.06] animate-pulseGlow"
           >
             Enquire Now <ArrowRight className="h-4 w-4" />
           </Link>

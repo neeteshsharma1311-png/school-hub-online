@@ -41,7 +41,7 @@ const Gallery = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
               whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft text-left"
+              className="group relative overflow-hidden rounded-2xl border border-border glass shadow-soft text-left hover-lift"
             >
               <div className="aspect-[4/3] overflow-hidden bg-secondary">
                 <img
