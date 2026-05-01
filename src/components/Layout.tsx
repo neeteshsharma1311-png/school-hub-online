@@ -156,15 +156,7 @@ const Layout = () => {
         </div>
         <div className="border-t border-border/60">
           <div className="container py-4 text-center text-sm text-muted-foreground">
-            Made by{" "}
-            <a
-              href="https://www.neetesh.tech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-gradient hover:underline"
-            >
-              Neetesh Sharma
-            </a>
+            © {new Date().getFullYear()} Engineer's Colony Senior Secondary School. All rights reserved.
           </div>
         </div>
       </footer>
