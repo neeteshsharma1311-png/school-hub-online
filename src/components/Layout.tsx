@@ -9,6 +9,7 @@ const nav = [
   { to: "/fees", label: "Fee Structure" },
   { to: "/teachers", label: "Teachers" },
   { to: "/gallery", label: "Gallery" },
+  { to: "/disclosure", label: "Disclosure" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -128,6 +129,7 @@ const Layout = () => {
               </div>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">Quarsi By Pass Road, Aligarh, Uttar Pradesh</p>
+            <p className="mt-2 text-sm text-muted-foreground">+91 89798 36229 · +91 79835 20713</p>
           </div>
           <div>
             <h4 className="font-serif text-lg mb-3">Quick Links</h4>
