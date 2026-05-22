@@ -9,6 +9,11 @@ const cards = [
     lines: ["Engineer's Colony Senior Secondary School", "Quarsi By Pass Road,", "Aligarh, Uttar Pradesh"],
   },
   {
+    icon: Phone,
+    title: "Call Us",
+    lines: ["+91 89798 36229", "+91 79835 20713"],
+  },
+  {
     icon: Clock,
     title: "School Hours",
     lines: ["Monday to Saturday", "8:00 AM – 2:00 PM", "Office: 9:00 AM – 3:00 PM"],
@@ -28,7 +33,7 @@ const Contact = () => (
       subtitle="We'd love to hear from you. Visit our campus or connect with us online."
     />
     <section className="container pb-20">
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
